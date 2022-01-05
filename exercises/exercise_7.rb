@@ -32,6 +32,10 @@ def add_user_store
   puts "Enter the name of your new store: "
   store_name = gets.chomp
   new_store = Store.create(name: store_name)
+  new_store.valid?
+  new_store.errors.messages.each do |err|
+    puts err
+  end
 end
 
 add_user_store
