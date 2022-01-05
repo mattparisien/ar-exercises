@@ -25,3 +25,14 @@ class Store < ActiveRecord::Base
   validates :name, length: { minimum: 3 }
   validates :annual_revenue, numericality: { greater_than: 0 }
 end
+
+#Ask user for store name
+
+def add_user_store
+  puts "Enter the name of your new store: "
+  store_name = gets.chomp
+  new_store = Store.create(name: store_name)
+end
+
+add_user_store
+
