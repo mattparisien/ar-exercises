@@ -11,3 +11,16 @@ puts "----------"
 Store.create(name: 'Surrey', annual_revenue: 224000, mens_apparel: false, womens_apparel: true)
 Store.create(name: 'Whistler', annual_revenue: 1900000, mens_apparel: true, womens_apparel: false)
 Store.create(name: 'Yaletown', annual_revenue: 430000, mens_apparel: true, womens_apparel: true)
+
+@mens_stores = Store.where(mens_apparel: true)
+@womens_apparel = Store.where(womens_apparel: true, 'annual_revenue < 10000000')
+
+@mens_stores.each { |store| 
+puts "Store name: #{store.name}"
+puts "Store annual revenue: #{store.annual_revenue}"
+}
+
+@womens_apparel.each { |store| 
+puts "Store name: #{store.name}"
+puts "Store annual revenue: #{store.annual_revenue}"
+}
