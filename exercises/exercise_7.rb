@@ -20,3 +20,8 @@ class Employee < ActiveRecord::Base
   validates :hourly_rate, numericality: { less_than: 200 }
   validates :store_id, presence: true
 end
+
+class Store < ActiveRecord::Base
+  validates :name, length: { minimum: 3 }
+  validates :annual_revenue, numericality: { greater_than: 0 }
+end
