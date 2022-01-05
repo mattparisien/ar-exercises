@@ -17,7 +17,8 @@ puts "----------"
 #Delete store3
 @store3.destroy
 
-puts @store1.name
+#Should output 2
+puts Store.count
 
 
 
