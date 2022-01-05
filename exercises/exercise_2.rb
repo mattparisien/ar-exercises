@@ -14,12 +14,6 @@ puts "----------"
 #Update store's name
 @store1.name = 'Montreal'
 
-#Delete store3
-@store3.destroy
-
-#Should output 2
-puts Store.count
-
 
 
 
